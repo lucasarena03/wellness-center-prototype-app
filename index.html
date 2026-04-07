@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Therapy Management System</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Management System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="phone-frame">
+        <div class="app-header">Horizon Wellness System</div>
 
-<h1>Therapy Management System</h1>
+        <div class="screen-content">
+            <h2>Welcome, Therapist</h2>
 
-<button onclick="location.href='search.html'">Search Patient Record</button>
+            <button onclick="location.href='search.html'">[ Search Patient Record ]</button>
+            <button onclick="location.href='session.html'">[ Record Treatment Session ]</button>
+            <button onclick="location.href='appointments.html'">[ View Appointments ]</button>
+            <button onclick="alert('Prototype logout not implemented yet.')">[ Logout ]</button>
+        </div>
+    </div>
 
-<button onclick="location.href='session.html'">Record Treatment Session</button>
-
-<button onclick="location.href='appointments.html'">View Appointments</button>
-
-<button onclick="logout()">Logout</button>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
