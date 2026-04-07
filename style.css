@@ -1,60 +1,100 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #f3f3f3;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding-top: 30px;
 }
 
 .phone-frame {
-    width: 260px;
-    min-height: 540px;
-    background: white;
-    border: 10px solid black;
-    border-radius: 35px;
-    box-sizing: border-box;
+    width: 430px;
+    min-height: 880px;
+    background: #f8f8f8;
+    border: 18px solid black;
+    border-radius: 55px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.app-header {
-    font-size: 13px;
-    color: #444;
-    padding: 14px 14px 10px 14px;
-    border-bottom: 1px solid #d9d9d9;
+.logo-section {
+    padding: 42px 24px 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f8f8;
+}
+
+.logo {
+    width: 78%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+.divider {
+    height: 2px;
+    background-color: #d7d7d7;
+    width: 100%;
 }
 
 .screen-content {
-    padding: 28px 18px;
+    padding: 42px 34px 60px;
     text-align: center;
 }
 
 .screen-content h2 {
-    margin-top: 0;
-    margin-bottom: 24px;
-    color: #5a67d8;
-    font-size: 20px;
-    font-weight: normal;
+    margin: 0 0 48px 0;
+    font-size: 34px;
+    font-weight: 400;
+    color: #2f6fb2;
 }
 
 .screen-content button {
     display: block;
     width: 100%;
-    margin-bottom: 14px;
-    padding: 10px;
-    background-color: white;
-    color: #3f51b5;
-    border: 1px solid #7d8edb;
-    font-size: 14px;
+    margin: 0 0 34px 0;
+    padding: 26px 22px;
+    background-color: #f8f8f8;
+    color: #2f6fb2;
+    border: 2px solid #2f6fb2;
+    font-size: 28px;
     text-align: left;
     cursor: pointer;
     box-sizing: border-box;
 }
 
 .screen-content button:hover {
-    background-color: #f5f7ff;
+    background-color: #eef5ff;
+}
+
+@media (max-width: 520px) {
+    .phone-frame {
+        width: 92vw;
+        min-height: 86vh;
+        border-width: 12px;
+        border-radius: 36px;
+    }
+
+    .screen-content {
+        padding: 28px 20px 40px;
+    }
+
+    .screen-content h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .screen-content button {
+        font-size: 22px;
+        padding: 18px 16px;
+        margin-bottom: 22px;
+    }
+
+    .logo {
+        width: 85%;
+    }
 }
