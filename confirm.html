@@ -1,0 +1,12 @@
+<h2>Treatment Session Successfully Recorded</h2>
+
+<p id="displayNotes"></p>
+
+<button onclick="location.href='index.html'">
+Return to Home
+</button>
+
+<script>
+document.getElementById("displayNotes").innerText =
+localStorage.getItem("sessionNotes");
+</script>
