@@ -13,7 +13,7 @@ function searchPatient() {
             </div>
         `;
     } else if (input === "") {
-        resultBox.innerHTML = `<div class="no-results">Please enter a patient name.</div>`;
+        resultBox.innerHTML = `<div class="no-results">Enter John Doe to display mock patient record.</div>`;
     } else {
         resultBox.innerHTML = `<div class="no-results">No matching patient found. Try searching for John Doe.</div>`;
     }
@@ -35,13 +35,13 @@ function submitSession() {
         return;
     }
 
-    // Save to localStorage (for prototype)
     localStorage.setItem("patientName", name);
     localStorage.setItem("sessionNotes", notes);
     localStorage.setItem("sessionGoals", goals);
     localStorage.setItem("sessionFollowup", followup);
 
     window.location.href = "confirm.html";
+}
 
 function showAppointments() {
     const input = document.getElementById("appointmentPatientName").value.trim().toLowerCase();
@@ -78,13 +78,13 @@ function showAppointments() {
             </div>
         `;
     } else if (input === "") {
-        resultBox.innerHTML = `<div class="no-results">Please enter a patient name.</div>`;
+        resultBox.innerHTML = `<div class="no-results">Enter John Doe to view mock appointments.</div>`;
     } else {
         resultBox.innerHTML = `<div class="no-results">No appointments found. Try searching for John Doe.</div>`;
     }
 }
 
 function logout() {
-    localStorage.clear(); // clears prototype data
+    localStorage.clear();
     window.location.href = "logout.html";
 }
