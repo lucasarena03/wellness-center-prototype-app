@@ -3,59 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Record Treatment Session - Horizon Wellness System</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <title>Record Treatment Session</title>
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
-    <div class="page-wrapper">
-        <div class="home-card session-page-card">
-            <div class="top-nav">
-                <button class="link-back" onclick="location.href='search.html'">← Back</button>
-                <span class="top-nav-title">Record Treatment Session</span>
-            </div>
 
-            <div class="session-content">
-                <div class="patient-summary">
-                    <p><strong>Patient:</strong> John Doe</p>
-                    <p><strong>Date:</strong> 03/24/2026</p>
-                </div>
+<div class="page-wrapper">
+    <div class="home-card session-page-card">
 
-                <div class="section-divider"></div>
-
-                <div class="form-group">
-                    <label for="notes">Treatment Notes:</label>
-                    <textarea id="notes" rows="6"></textarea>
-                </div>
-
-                <div class="section-divider"></div>
-
-                <div class="form-group">
-                    <label for="goals">Wellness Goals Update:</label>
-                    <textarea id="goals" rows="4"></textarea>
-                </div>
-
-                <div class="section-divider"></div>
-
-                <div class="form-group">
-                    <label>Follow-Up Required?</label>
-                    <div class="radio-row">
-                        <label class="radio-label">
-                            <input type="radio" name="followup" value="Yes" checked> Yes
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="followup" value="No"> No
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="search-footer">
-                <button onclick="submitSession()">[ Submit ]</button>
-                <button onclick="location.href='index.html'">[ Cancel ]</button>
-            </div>
+        <div class="top-nav">
+            <button class="link-back" onclick="location.href='index.html'">← Back</button>
+            <span class="top-nav-title">Record Treatment Session</span>
         </div>
-    </div>
 
-    <script src="script.js?v=6"></script>
+        <div class="session-content">
+
+            <!-- ✅ NEW: Patient Input -->
+            <div class="form-group">
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" placeholder="Enter patient name">
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="form-group">
+                <label for="notes">Treatment Notes:</label>
+                <textarea id="notes"></textarea>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="form-group">
+                <label for="goals">Wellness Goals Update:</label>
+                <textarea id="goals"></textarea>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="form-group">
+                <label>Follow-Up Required?</label>
+                <div class="radio-row">
+                    <label class="radio-label">
+                        <input type="radio" name="followup" value="Yes" checked> Yes
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="followup" value="No"> No
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="search-footer">
+            <button onclick="submitSession()">[ Submit ]</button>
+            <button onclick="location.href='index.html'">[ Cancel ]</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js?v=10"></script>
 </body>
 </html>
