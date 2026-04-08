@@ -20,21 +20,28 @@ function searchPatient() {
 }
 
 function submitSession() {
+    const name = document.getElementById("patientName").value.trim();
     const notes = document.getElementById("notes").value.trim();
     const goals = document.getElementById("goals").value.trim();
     const followup = document.querySelector('input[name="followup"]:checked')?.value || "Yes";
+
+    if (name === "") {
+        alert("Please enter a patient name.");
+        return;
+    }
 
     if (notes === "") {
         alert("Please enter treatment notes.");
         return;
     }
 
+    // Save to localStorage (for prototype)
+    localStorage.setItem("patientName", name);
     localStorage.setItem("sessionNotes", notes);
     localStorage.setItem("sessionGoals", goals);
     localStorage.setItem("sessionFollowup", followup);
 
     window.location.href = "confirm.html";
-}
 
 function showAppointments() {
     const input = document.getElementById("appointmentPatientName").value.trim().toLowerCase();
