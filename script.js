@@ -83,3 +83,8 @@ function showAppointments() {
         resultBox.innerHTML = `<div class="no-results">No appointments found. Try searching for John Doe.</div>`;
     }
 }
+
+function logout() {
+    localStorage.clear(); // clears prototype data
+    window.location.href = "logout.html";
+}
