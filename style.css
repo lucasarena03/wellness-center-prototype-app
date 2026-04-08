@@ -386,3 +386,48 @@ button {
     cursor: pointer;
     box-sizing: border-box;
 }
+
+.appointments-page-card {
+    max-width: 880px;
+}
+
+.appointments-content {
+    padding: 32px 40px 24px;
+}
+
+.appointment-section {
+    margin-top: 24px;
+}
+
+.appointment-section h3 {
+    margin: 0 0 16px 0;
+    font-size: 24px;
+    color: #555;
+    font-weight: 600;
+}
+
+.appointment-card {
+    border: 2px solid #d4d9e2;
+    background: #fbfbfb;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    font-size: 21px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.appointment-card strong {
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .appointments-content {
+        padding: 22px 20px 18px;
+    }
+
+    .appointment-section h3,
+    .appointment-card {
+        font-size: 18px;
+    }
+}
