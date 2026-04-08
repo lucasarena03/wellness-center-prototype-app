@@ -18,3 +18,20 @@ function searchPatient() {
         resultBox.innerHTML = `<div class="no-results">No matching patient found. Try searching for John Doe.</div>`;
     }
 }
+
+function submitSession() {
+    const notes = document.getElementById("notes").value.trim();
+    const goals = document.getElementById("goals").value.trim();
+    const followup = document.querySelector('input[name="followup"]:checked')?.value || "Yes";
+
+    if (notes === "") {
+        alert("Please enter treatment notes.");
+        return;
+    }
+
+    localStorage.setItem("sessionNotes", notes);
+    localStorage.setItem("sessionGoals", goals);
+    localStorage.setItem("sessionFollowup", followup);
+
+    window.location.href = "confirm.html";
+}
