@@ -1,10 +1,41 @@
-<h2>Search Patient Record</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Search - Horizon Wellness System</title>
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="home-card search-page-card">
+            <div class="top-nav">
+                <button class="link-back" onclick="location.href='index.html'">← Back</button>
+                <span class="top-nav-title">Patient Search</span>
+            </div>
 
-<input type="text" id="patientName" placeholder="Enter patient name">
+            <div class="search-content">
+                <div class="search-row">
+                    <label for="patientName">Search Patient:</label>
+                    <input type="text" id="patientName" placeholder="">
+                    <button class="primary-btn" onclick="searchPatient()">Search 🔎</button>
+                </div>
 
-<button onclick="searchPatient()">Search</button>
+                <div class="results-section">
+                    <h3>Patient Results:</h3>
+                    <div id="patientResult"></div>
+                </div>
+            </div>
 
-<div id="patientResult"></div>
+            <div class="search-footer">
+                <button onclick="location.href='session.html'">[ Record Session ]</button>
+                <button onclick="location.href='session.html'">[ Edit Goals ]</button>
+                <button onclick="location.href='index.html'">[ Back ]</button>
+            </div>
+        </div>
+    </div>
 
-<button onclick="location.href='index.html'">Back</button>
+    <script src="script.js?v=5"></script>
+</body>
+</html>
 
