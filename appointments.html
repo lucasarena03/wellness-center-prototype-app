@@ -1,9 +1,37 @@
-<h2>Appointments</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Horizon Wellness System</title>
+    <link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="home-card appointments-page-card">
+            <div class="top-nav">
+                <button class="link-back" onclick="location.href='index.html'">← Back</button>
+                <span class="top-nav-title">Appointments</span>
+            </div>
 
-<h3>Upcoming Appointments</h3>
-<p>Dr. Smith - June 10, 2026</p>
+            <div class="appointments-content">
+                <div class="search-row">
+                    <label for="appointmentPatientName">Patient Name:</label>
+                    <input type="text" id="appointmentPatientName" placeholder="Enter patient name">
+                    <button class="primary-btn" onclick="showAppointments()">Search</button>
+                </div>
 
-<h3>Past Appointments</h3>
-<p>Dr. Smith - May 15, 2026</p>
+                <div id="appointmentsResult">
+                    <div class="no-results">Enter John Doe to view mock appointments.</div>
+                </div>
+            </div>
 
-<button onclick="location.href='index.html'">Return to Home</button>
+            <div class="search-footer">
+                <button onclick="location.href='index.html'">[ Return to Home ]</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=9"></script>
+</body>
+</html>
