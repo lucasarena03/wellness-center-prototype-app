@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Search - Horizon Wellness System</title>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -17,26 +17,28 @@
             <div class="search-content">
                 <div class="search-row">
                     <label for="patientName">Search Patient:</label>
-                    <input type="text" id="patientName" placeholder="">
-                    <button class="primary-btn" onclick="searchPatient()">Search 🔎</button>
+                    <input list="patients" id="patientName" placeholder="Type or select a patient" />
+                    <datalist id="patients">
+                        <option value="John Doe"></option>
+                    </datalist>
+                    <button class="primary-button" onclick="searchPatient()">Search 🔎</button>
                 </div>
 
                 <div class="results-section">
                     <div id="patientResult">
-    <div class="no-results">Enter John Doe to display mock patient record.</div>
-</div>
-                    <div id="patientResult"></div>
+                        <div class="no-results">Enter John Doe to display mock patient record.</div>
+                    </div>
                 </div>
             </div>
 
             <div class="search-footer">
-                <button onclick="location.href='session.html'">[ Record Session ]</button>
-                <button onclick="location.href='session.html'">[ Edit Goals ]</button>
-                <button onclick="location.href='index.html'">[ Back ]</button>
+                <a class="outline-button" onclick="location.href='session.html'">[ Record Session ]</a>
+                <a class="outline-button" onclick="location.href='session.html'">[ Edit Goals ]</a>
+                <a class="outline-button" onclick="location.href='index.html'">[ Back ]</a>
             </div>
         </div>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js"></script>
 </body>
 </html>
