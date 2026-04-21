@@ -1,12 +1,91 @@
-<h2>Treatment Session Successfully Recorded</h2>
 
-<p id="displayNotes"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Wellness System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<button onclick="location.href='index.html'">
-Return to Home
-</button>
+    <div class="page-wrapper">
+        <div class="home-card">
 
-<script>
-document.getElementById("displayNotes").innerText =
-localStorage.getItem("sessionNotes");
-</script>
+            <div class="logo-section">
+                <img src="horizon-logo-new.png" alt="Horizon Center Logo" class="logo">
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Treatment Session Successfully Recorded</h2>
+
+            <a class="primary-button" href="index.html" style="margin-top: 20px; font-size: 12px;">Return to Home</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const params = new URLSearchParams(document.location.search);
+        const name = params.get("name");
+        const notes = params.get("notes");
+        const goals = params.get("goals");
+        const followup = params.get("followup");
+
+        document.querySelector(".home-card").innerHTML = `
+            <div class="logo-section">
+                <img src="horizon-logo-new.png" alt="Horizon Center Logo" class="logo">
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Treatment Session Successfully Recorded</h2>
+            <div class="session-summary">
+                <div class="session-detail">
+                    <h3>Session Summary</h3>
+                    <h4>Patient Information</h4>
+                    <p>Name: ${name}</p>
+                    <h4>Session Notes</h4>
+                    <p>${notes}</p>
+                    <h4>Goals Addressed</h4>
+                    <p>${goals}</p>
+                    <h4>Follow-up Needed</h4>
+                    <p>${followup}</p>
+                </div>
+            </div>
+            <div class="search-footer" style="flex-direction: column; text-align: center;">
+                <a class="primary-button" href="#" onclick="printSessionSummary()" style="margin-bottom: 10px;">[ Print PDF ]</a>
+                <a class="secondary-button" href="index.html">[ Home ]</a>
+            </div>
+        `;
+    </script>
+    <script>
+        function printSessionSummary() {
+            const summary = document.querySelector('.session-summary');
+            if (!summary) {
+                window.print();
+                return;
+            }
+
+            const printWindow = window.open('', '_blank', 'width=800,height=600');
+            if (!printWindow) {
+                window.print();
+                return;
+            }
+
+            const doc = printWindow.document;
+            doc.open();
+            doc.write('<!doctype html><html><head><meta charset="utf-8"><title>Session Summary</title>');
+            // include site stylesheet for consistent print styling
+            doc.write('<link rel="stylesheet" href="style.css">');
+            doc.write('</head><body>');
+            doc.write(summary.outerHTML);
+            doc.write('</body></html>');
+            doc.close();
+            printWindow.focus();
+            // Delay slightly to ensure styles load
+            setTimeout(() => { printWindow.print(); printWindow.close(); }, 250);
+        }
+    </script>
+</body>
+</html>

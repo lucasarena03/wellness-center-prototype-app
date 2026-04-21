@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record Treatment Session</title>
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="page-wrapper">
-    <div class="home-card session-page-card">
+    <div class="page-wrapper">
+        <div class="home-card session-page-card">
 
-        <div class="top-nav">
-            <button class="link-back" onclick="location.href='index.html'">← Back</button>
-            <span class="top-nav-title">Record Treatment Session</span>
-        </div>
-
-        <div class="session-content">
-
-            <!-- ✅ NEW: Patient Input -->
-            <div class="form-group">
-                <label for="patientName">Patient Name:</label>
-                <input type="text" id="patientName" placeholder="Enter patient name">
+            <div class="top-nav">
+                <button class="link-back" onclick="location.href='index.html'">← Back</button>
+                <span class="top-nav-title">Record Treatment Session</span>
             </div>
 
-            <div class="section-divider"></div>
+            <div class="session-content">
 
-            <div class="form-group">
-                <label for="notes">Treatment Notes:</label>
-                <textarea id="notes"></textarea>
-            </div>
-
-            <div class="section-divider"></div>
-
-            <div class="form-group">
-                <label for="goals">Wellness Goals Update:</label>
-                <textarea id="goals"></textarea>
-            </div>
-
-            <div class="section-divider"></div>
-
-            <div class="form-group">
-                <label>Follow-Up Required?</label>
-                <div class="radio-row">
-                    <label class="radio-label">
-                        <input type="radio" name="followup" value="Yes" checked> Yes
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="followup" value="No"> No
-                    </label>
+                <!-- ✅ NEW: Patient Input -->
+                <div class="form-group">
+                    <label for="patientName">Patient Name:</label>
+                    <input type="text" id="patientName" placeholder="Enter patient name">
                 </div>
+
+                <div class="section-divider"></div>
+
+                <div class="form-group">
+                    <label for="notes">Treatment Notes:</label>
+                    <textarea id="notes"></textarea>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="form-group">
+                    <label for="goals">Wellness Goals Update:</label>
+                    <textarea id="goals"></textarea>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="form-group">
+                    <label>Follow-Up Required?</label>
+                    <div class="radio-row">
+                        <label class="radio-label">
+                            <input type="radio" name="followup" value="Yes" checked> <p>Yes</p>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="followup" value="No"> <p>No</p>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="search-footer">
+                <a class="outline-button" onclick="submitSession()">[ Submit ]</a>
+                <a class="outline-button" href="index.html">[ Cancel ]</a>
             </div>
 
         </div>
-
-        <div class="search-footer">
-            <button onclick="submitSession()">[ Submit ]</button>
-            <button onclick="location.href='index.html'">[ Cancel ]</button>
-        </div>
-
     </div>
-</div>
+    <script src="script.js"></script>
+    <script>
+        const patientName = document.getElementById('patientName');
+        const notes = document.getElementById('notes');
+        const goals = document.getElementById('goals');
 
-<script src="script.js?v=10"></script>
+        const params = new URLSearchParams(document.location.search);
+        const patient = params.get("patient");
+
+        if (patient === "John Doe") {
+            patientName.value = "John Doe";
+            notes.value = "Patient reported feeling more energetic after last session. No adverse reactions to treatment.";
+            goals.value = "Continue current treatment plan. Aim to increase physical activity levels by next session.";
+        }
+    </script>
 </body>
+
 </html>

@@ -41,6 +41,8 @@ body {
 .screen-content {
     padding: 48px 56px 60px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .screen-content h2 {
@@ -50,7 +52,7 @@ body {
     color: #2f6fb2;
 }
 
-.screen-content button {
+.outline-button {
     display: block;
     width: 100%;
     margin: 0 0 28px 0;
@@ -62,9 +64,10 @@ body {
     text-align: left;
     cursor: pointer;
     box-sizing: border-box;
+    text-align: center;
 }
 
-.screen-content button:hover {
+.outline-button:hover {
     background-color: #eef5ff;
 }
 
@@ -126,7 +129,20 @@ body {
     box-sizing: border-box;
 }
 
-.primary-btn {
+.search-row select {
+    flex: 1;
+    min-width: 220px;
+    max-width: 320px;
+    padding: 12px 14px;
+    font-size: 18px;
+    border: 1px solid #bfc7d8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: white;
+    color: #222;
+}
+
+.primary-button {
     padding: 12px 18px;
     font-size: 18px;
     background: #2f6fb2;
@@ -136,8 +152,22 @@ body {
     cursor: pointer;
 }
 
-.primary-btn:hover {
+.secondary-button {
+    padding: 12px 18px;
+    font-size: 18px;
+    background: #77AF49;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.primary-button:hover {
     background: #255a91;
+}
+
+.secondary-button:hover {
+    background: rgb(101, 147, 63);
 }
 
 .results-section h3 {
@@ -169,7 +199,7 @@ body {
     color: #444;
 }
 
-.select-btn {
+.select-button {
     min-width: 120px;
     padding: 14px 18px;
     font-size: 18px;
@@ -177,9 +207,10 @@ body {
     color: #2f6fb2;
     border: 2px solid #9fb6db;
     cursor: pointer;
+    text-align: center;
 }
 
-.select-btn:hover {
+.select-button:hover {
     background: #eef5ff;
 }
 
@@ -192,20 +223,17 @@ body {
 /* Shared footer buttons */
 .search-footer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 18px;
-    padding: 28px 32px 36px;
     border-top: 1px solid #d7d7d7;
-    flex-wrap: wrap;
+    padding: 24px;
 }
 
-.search-footer button {
+.search-footer a {
     padding: 18px 22px;
-    background-color: #f8f8f8;
-    color: #2f6fb2;
-    border: 2px solid #2f6fb2;
     font-size: 22px;
     cursor: pointer;
+    margin: 0 10px;
 }
 
 .search-footer button:hover {
@@ -268,20 +296,51 @@ body {
 
 .radio-row {
     display: flex;
-    gap: 28px;
-    margin-top: 6px;
+    flex-direction: row;
 }
 
 .radio-label {
-    font-size: 20px;
     color: #555;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 20px;
+    margin: 0px 20px;
+    flex-direction: row;
+    display: flex !important;
 }
 
 .radio-label input[type="radio"] {
     transform: scale(1.2);
+    margin-right: 8px;
+}
+
+.session-summary {
+    margin: 8px;
+    padding: 8px;
+    background: #f8f8f8;
+    border: 2px solid #d4d9e2;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.session-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.session-detail h3 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: #111;
+}
+
+.session-detail h4{
+    margin: 0;
+    font-size: 22px;
+}
+
+.session-detail p {
+    margin: 0 0 12px 0;
+    font-size: 20px;
 }
 
 /* Responsive */
@@ -325,7 +384,7 @@ body {
         font-size: 16px;
     }
 
-    .primary-btn {
+    .primary-button {
         width: 100%;
         font-size: 16px;
     }
@@ -345,7 +404,7 @@ body {
         font-size: 18px;
     }
 
-    .select-btn {
+    .select-button {
         width: 100%;
     }
 

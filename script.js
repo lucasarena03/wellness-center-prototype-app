@@ -1,15 +1,20 @@
-function searchPatient() {
+const searchPatient = () => {
     const input = document.getElementById("patientName").value.trim().toLowerCase();
     const resultBox = document.getElementById("patientResult");
 
-    if (input === "john doe") {
+    if (!input || input === "") {
+        resultBox.innerHTML = `<div class="no-results">Enter John Doe to display mock patient record.</div>`;
+        return;
+    }
+
+    if ("john doe".startsWith(input.toLowerCase())) {
         resultBox.innerHTML = `
             <div class="patient-card">
                 <div class="patient-info">
                     <strong>Name:</strong> John Doe &nbsp;&nbsp;
                     <strong>DOB:</strong> 01/01/1990
                 </div>
-                <button class="select-btn" onclick="location.href='session.html'">[ Select ]</button>
+                <a class="select-button" href="session.html?patient=John%20Doe">[ Select ]</a>
             </div>
         `;
     } else if (input === "") {
@@ -19,7 +24,7 @@ function searchPatient() {
     }
 }
 
-function submitSession() {
+const submitSession = () => {
     const name = document.getElementById("patientName").value.trim();
     const notes = document.getElementById("notes").value.trim();
     const goals = document.getElementById("goals").value.trim();
@@ -35,19 +40,15 @@ function submitSession() {
         return;
     }
 
-    localStorage.setItem("patientName", name);
-    localStorage.setItem("sessionNotes", notes);
-    localStorage.setItem("sessionGoals", goals);
-    localStorage.setItem("sessionFollowup", followup);
-
-    window.location.href = "confirm.html";
+    window.location.href = `confirm.html?name=${encodeURIComponent(name)}&notes=${encodeURIComponent(notes)}&goals=${encodeURIComponent(goals)}&followup=${encodeURIComponent(followup)}`;
 }
 
-function showAppointments() {
-    const input = document.getElementById("appointmentPatientName").value.trim().toLowerCase();
+const showAppointments = () => {
+    const name = document.getElementById("appointmentPatientName").value.trim().toLowerCase();
+    const dob = document.getElementById("appointmentPatientDOB").value.trim();
     const resultBox = document.getElementById("appointmentsResult");
 
-    if (input === "john doe") {
+    if (name === "john doe" && dob === "1990-01-01") {
         resultBox.innerHTML = `
             <div class="appointment-section">
                 <h3>Upcoming Appointments</h3>
@@ -77,9 +78,7 @@ function showAppointments() {
                 </div>
             </div>
         `;
-    } else if (input === "") {
-        resultBox.innerHTML = `<div class="no-results">Enter John Doe to view mock appointments.</div>`;
     } else {
-        resultBox.innerHTML = `<div class="no-results">No appointments found. Try searching for John Doe.</div>`;
+        resultBox.innerHTML = `<div class="no-results">No appointments found. Try searching for John Doe with DOB 1990-01-01.</div>`;
     }
 }
