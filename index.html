@@ -8,27 +8,27 @@
 </head>
 <body>
 
-    <div class="page-wrapper">
-        <div class="home-card">
+<div class="page-wrapper">
+    <div class="home-card">
 
-            <div class="logo-section">
-                <img src="horizon-logo-new.png" alt="Horizon Center Logo" class="logo">
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="screen-content">
-                <h2>Welcome, Therapist/Patient</h2>
-
-                <a class="outline-button" href="search.html">[ Search Patient Record ]</a>
-                <a class="outline-button" href="session.html">[ Record Treatment Session ]</a>
-                <a class="outline-button" href="appointments.html">[ View Appointments ]</a>
-                <a class="outline-button" href="login.html">[ Logout ]</a>
-            </div>
-
+        <div class="logo-section">
+            <img src="horizon-logo-new.png" class="logo">
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <div class="divider"></div>
+
+        <div class="screen-content">
+            <h2 id="welcomeText">Welcome</h2>
+
+            <a id="searchBtn" class="outline-button" href="search.html">[ Search Patient Record ]</a>
+            <a id="sessionBtn" class="outline-button" href="session.html">[ Record Treatment Session ]</a>
+            <a class="outline-button" href="appointments.html">[ View Appointments ]</a>
+            <a class="outline-button" href="login.html" onclick="logout()">[ Logout ]</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
